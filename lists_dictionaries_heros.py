@@ -18,12 +18,25 @@ franchise = {
     'marvel' : ['Hulk', 'Thor', 'Black Widow']
 }
 z = [ {'x': 10, 'y': 20} ]
-#1.) How would you change the value 10 in x to 15?  Once you're done x should then be [ [5,2,3], [15,8,9] ].  
+#1.) How would you change the value 10 in x to 15? Once you're done x should then be [ [5,2,3], [15,8,9] ].
+x[1][0] = 15
+print("#1: ", x)
+
 #2.) How would you change the hero_name of the first hero from 'Batman' to "Dark Knight"?
+heros[0]['hero_name'] = 'Dark Knight'
+print("#2: ", heros)
+
 #3.) For the franchise dictionary, how would you change 'Aquaman' to 'Daredevil'?
+franchise['dc'][1] = 'Daredevil'
+print("#3: ", franchise)
+
 #4.) For z, how would you change the value 20 to 30?
+# z = [ {'x': 10, 'y': 20} ]
+z[0]['y'] = 30
+print("#4: ", z)
 
 #-----------------------------------------------------------------
+
 #Problem 2
 #Create a function that given a list of dictionaries, it loops through each dictionary in the list and prints each key and the associated value.  
 #For example, given the following list:
@@ -41,6 +54,19 @@ superheros = [
 #real_name - Barry Allan, hero_name - The Flash
 #real_name - Bruce Banner, hero_name - The Incredible Hulk 
 #real_name - Diana Prince, hero_name - Wonder Woman
+def first(d):
+    for key in d:
+        print(key +"-"+d[key])
+
+superheros = [
+    {'real_name': 'Steve Rogers', 'hero_name': 'Captain America'},
+    {'real_name': 'Barry Allan', 'hero_name': 'The Flash'},
+    {'real_name': 'Bruce Banner', 'hero_name': 'The Incredible Hulk'},
+    {'real_name': 'Diana Prince', 'hero_name': 'Wonder Woman'}
+]
+for i in superheros:
+    first(i)
+
 
 #------------------------------------------------------------------
 #Problem 3
@@ -52,6 +78,27 @@ superheros = [
 #Barry Allan
 #Bruce Banner
 #Diana Prince
+superheros = [
+    {'real_name': 'Steve Rogers', 'hero_name': 'Captain America'},
+    {'real_name': 'Barry Allan', 'hero_name': 'The Flash'},
+    {'real_name': 'Bruce Banner', 'hero_name': 'The Incredible Hulk'},
+    {'real_name': 'Diana Prince', 'hero_name': 'Wonder Woman'}
+]
+def first(d):
+    for key in d:
+        if key == 'real_name':
+            print(d[key])
+
+        #print(key +"-"+d[key])
+
+superheros = [
+    {'real_name': 'Steve Rogers', 'hero_name': 'Captain America'},
+    {'real_name': 'Barry Allan', 'hero_name': 'The Flash'},
+    {'real_name': 'Bruce Banner', 'hero_name': 'The Incredible Hulk'},
+    {'real_name': 'Diana Prince', 'hero_name': 'Wonder Woman'}
+]
+for i in superheros:
+    first(i)
 
 
 #-----------------------------------------------------------------
@@ -62,7 +109,13 @@ movie_collection = {
     'disney': ['Cinderella', 'Encanto', 'Little Mermaid', 'Tangled', 'Beauty & The Beast', 'Lion King', '101 Dalmations'],
     'pixar': ['Toy Story', 'Monsters, Inc.', 'Up', 'Finding Nemo', 'Coco', 'Wall-E', 'The Incredibles', 'Inside Out']
 }
-
+for key, value in movie_collection.items():
+    j = 0
+    print(key)
+    for i in value:
+        j = j + 1
+        print(i)
+    print(j)
 #Expected Outpout
 #7 DISNEY
 #- Cinderella
